@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 6, 2018 10:13:53 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="hrms.Employee" table="employee">
+        <id name="employeeId" type="int">
+            <column name="employee_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property>
+        <property name="mobile" type="java.lang.String">
+            <column name="mobile" />
+        </property>
+        <property name="employeeNumber" type="java.lang.String">
+            <column name="employee_number" />
+        </property>
+        <property name="dateOfJoining" type="java.lang.String">
+            <column name="date_of_joining" />
+        </property>
+        <property name="specilaist" type="java.lang.String">
+            <column name="specilaist" />
+        </property>
+        <property name="mail" type="java.lang.String">
+            <column name="mail" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="address" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" />
+        </property>
+        <property name="supervisoryId" type="int">
+            <column name="supervisory_id" />
+        </property>
+    <!--     <property name="supervisoryName" type="java.lang.String">
+            <column name="supervisory_name" />
+        </property> -->
+    </class>
+    
+    <class name="hrms.PerimissionManagement" table="permission_management">
+        <id name="permissionManagementId" type="int">
+            <column name="permission_management_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="startDate" type="java.lang.String">
+            <column name="start_date" />
+        </property>
+        <property name="endDate" type="java.lang.String">
+            <column name="end_date" />
+        </property>
+        <property name="reason" type="java.lang.String">
+            <column name="reason" />
+        </property>
+     
+        <property name="status" type="java.lang.String">
+            <column name="status" />
+        </property>
+            <property name="leaveTaken" type="int">
+            <column name="leave_taken" />
+        </property> 
+         <property name="leaveId" type="int">
+            <column name="leave_id" />
+        </property>
+        <property name="employeeNumber" type="java.lang.String">
+            <column name="employee_number" />
+        </property>
+        <property name="leaveCount" type="int">
+            <column name="leave_count" />
+        </property>
+        <property name="leavePeriod" type="java.lang.String">
+            <column name="leave_period" />
+        </property>
+        <property name="supervisoryId" type="int">
+            <column name="supervisory_id" />
+        </property>
+      <property name="supervisoryNumber" type="java.lang.String">
+            <column name="supervisory_number" />
+        </property>
+        
+        <property name="comments" type="java.lang.String">
+            <column name="comments" />
+        </property>
+    </class>
+    
+    <class name="hrms.Leave" table="leave">
+        <id name="leaveId" type="int">
+            <column name="leave_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="leaveType" type="java.lang.String">
+            <column name="leave_type" />
+        </property>
+        <property name="leavePeriod" type="java.lang.String">
+            <column name="leave_period" />
+        </property>
+        <property name="leaveCount" type="java.lang.String">
+            <column name="leave_count" />
+        </property>
+        <property name="valid" type="int">
+            <column name="vaild" />
+        </property>
+    </class>
+    
+    
+    <class name="hrms.SalaryCalculation" table="salary_calculation">
+        <id name="salaryCalculationId" type="int">
+            <column name="salary_calculation_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="EmployeeNumber" type="java.lang.String">
+            <column name="employee_number" />
+        </property>
+        <property name="permissionManagementId" type="int">
+            <column name="permission_management_id" />
+        </property>
+        <property name="salaryMonth" type="java.lang.String">
+            <column name="salary_month" />
+        </property>
+        <property name="salaryAmount" type="java.lang.String">
+            <column name="salary_amount" />
+        </property>
+        <property name="bonous" type="java.lang.String">
+            <column name="bonous" />
+        </property>
+        <property name="totalSalary" type="java.lang.String">
+            <column name="total_salary" />
+        </property>
+       <property name="year" type="java.lang.String">
+            <column name="year" />
+        </property>
+          </class>  
+        
+         
+    <class name="hrms.Attendance" table="attendance">
+        <id name="attendanceId" type="int">
+            <column name="attendance_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="date" type="java.lang.String">
+            <column name="date" />
+        </property>
+        <property name="inTime" type="java.lang.String">
+            <column name="in_time" />
+        </property>
+        <property name="outTime" type="java.lang.String">
+            <column name="out_time" />
+        </property>
+        <property name="cumulativeTime" type="java.lang.String">
+            <column name="cumulative_time" />
+        </property>
+        <property name="attendanceStatus" type="java.lang.String">
+            <column name="attendance_status" />
+        </property>
+           <property name="employeeNumber" type="java.lang.String">
+            <column name="employee_number" />
+        </property>
+        
+    </class>
+    
+        
+    <class name="hrms.Login" table="login">
+        <id name="loginId" type="int">
+            <column name="login_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name" />
+        </property>
+        <property name="passwordKey" type="java.lang.String">
+            <column name="password_key" />
+        </property>
+        <property name="role" type="java.lang.String">
+            <column name="role" />
+        </property>
+    </class>
+    
+    <class name="hrms.Supervisory" table="supervisory">
+        <id name="supervisoryId" type="int">
+            <column name="supervisory_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="supervisoryName" type="java.lang.String">
+            <column name="supervisory_name" />
+        </property>
+        <property name="departmentHead" type="java.lang.String">
+            <column name="department_head" />
+        </property>
+        <property name="supervisoryDateOfJoining" type="java.lang.String">
+            <column name="date_of_joining" />
+        </property>
+        <property name="supervisoryNumber" type="java.lang.String">
+            <column name="supervisory_number" />
+        </property>
+        <property name="supervisoryMobile" type="java.lang.String">
+            <column name="supervisory_mobile" />
+        </property>
+        <property name="supervisoryMail" type="java.lang.String">
+            <column name="supervisory_mail" />
+        </property>
+    </class>
+
+</hibernate-mapping>
+
